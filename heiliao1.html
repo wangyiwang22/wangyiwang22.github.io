@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>51黑料神秘通道准备中...</title>
+    <meta name="description" content="您的51黑料秘密研究基地，通往51黑料神秘世界的跳转入口。"/>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing:border-box
+    }
+
+    body, html {
+        height: 100%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #0a0a0a;
+        color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position:relative
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: radial-gradient(2px 2px at 3% 10%, #fff, transparent), radial-gradient(1.8px 1.8px at 7% 40%, #ff395d, transparent), radial-gradient(1.5px 1.5px at 12% 65%, #fff, transparent), radial-gradient(1.3px 1.3px at 18% 20%, #ccc, transparent), radial-gradient(1.7px 1.7px at 23% 80%, #ff395d, transparent), radial-gradient(2px 2px at 28% 8%, #eee, transparent), radial-gradient(2px 2px at 5% 5%, #fff, transparent), radial-gradient(1.8px 1.8px at 10% 35%, #ff395d, transparent), radial-gradient(1.5px 1.5px at 14% 60%, #fff, transparent), radial-gradient(1.3px 1.3px at 21% 15%, #ccc, transparent), radial-gradient(1.7px 1.7px at 26% 75%, #ff395d, transparent), radial-gradient(1.4px 1.4px at 33% 48%, #fff, transparent), radial-gradient(1.6px 1.6px at 38% 78%, #ff616f, transparent), radial-gradient(1.2px 1.2px at 43% 28%, #fff, transparent), radial-gradient(2px 2px at 48% 88%, #ff395d, transparent), radial-gradient(1.8px 1.8px at 62% 41%, #fff, transparent), radial-gradient(1.5px 1.5px at 67% 71%, #ff395d, transparent), radial-gradient(1.1px 1.1px at 72% 16%, #eee, transparent), radial-gradient(2px 2px at 77% 56%, #fff, transparent), radial-gradient(1.4px 1.4px at 82% 86%, #ff616f, transparent), radial-gradient(1.3px 1.3px at 53% 18%, #ccc, transparent), radial-gradient(1.8px 1.8px at 58% 43%, #fff, transparent), radial-gradient(1.5px 1.5px at 63% 73%, #ff395d, transparent), radial-gradient(1.1px 1.1px at 68% 18%, #eee, transparent), radial-gradient(2px 2px at 73% 58%, #fff, transparent), radial-gradient(1.4px 1.4px at 78% 88%, #ff616f, transparent), radial-gradient(1.7px 1.7px at 83% 33%, #fff, transparent), radial-gradient(1.3px 1.3px at 88% 73%, #ff395d, transparent), radial-gradient(1.9px 1.9px at 93% 13%, #ccc, transparent), radial-gradient(1.9px 1.9px at 97% 11%, #ccc, transparent);
+        background-repeat: no-repeat;
+        animation: 4s infinite alternate twinkle;
+        z-index: 0;
+        pointer-events:none
+    }
+
+    @keyframes twinkle {
+        0%, 100%, 50% {
+            opacity:.5
+        }
+
+        25%, 75% {
+            opacity:1
+        }
+    }
+
+    .container {
+        text-align: center;
+        background: rgba(18, 18, 18, .85);
+        padding: 40px 25px;
+        border-radius: 16px;
+        box-shadow: 0 0 50px rgba(255, 56, 93, .6);
+        max-width: 500px;
+        width: 90%;
+        z-index: 2;
+        position:relative
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: #ff395d;
+        text-shadow: 0 0 15px #ff395d;
+        margin-bottom:10px
+    }
+
+    .loading-text {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #ccc;
+        margin-bottom:25px
+    }
+
+    .loading-dots span {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin: 0 2px;
+        background: #ff395d;
+        border-radius: 50%;
+        animation: 1.4s infinite blink;
+        opacity:.3
+    }
+
+    .loading-dots span:first-child {
+        animation-delay:0s
+    }
+
+    .loading-dots span:nth-child(2) {
+        animation-delay:.2s
+    }
+
+    .loading-dots span:nth-child(3) {
+        animation-delay:.4s
+    }
+
+    @keyframes blink {
+        0%, 100%, 50% {
+            opacity:1
+        }
+
+        25%, 75% {
+            opacity:.3
+        }
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 20px;
+        background: #222;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: inset 0 0 10px #ff395d88;
+        margin-bottom:20px
+    }
+
+    .progress-fill {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #ff395d, #ff616f);
+        border-radius: 10px 0 0 10px;
+        transition:width .3s
+    }
+
+    .countdown-text {
+        font-size: 1rem;
+        color: #ff395d;
+        font-weight: 700;
+        margin-bottom:20px
+    }
+
+    .info-text {
+        font-size: .95rem;
+        color: #aaa;
+        margin-bottom: 25px;
+        line-height:1.6
+    }
+
+    #jump-btn, .target-link {
+        cursor: pointer;
+        font-size:1rem
+    }
+
+    .footer a, .target-link {
+        color: #ff395d;
+        border-bottom:1px dotted #ff395d
+    }
+
+    .target-link {
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: inline-block;
+        word-break: break-word;
+        overflow-wrap:break-word
+    }
+
+    .target-link:hover {
+        color:#ff7a8a
+    }
+
+    .quote {
+        font-size: .9rem;
+        color: #999;
+        margin-top: 20px;
+        font-style:italic
+    }
+
+    .footer {
+        font-size: .75rem;
+        color: #666;
+        margin-top: 25px;
+        line-height: 1.5;
+        text-align:center
+    }
+
+    .footer a {
+        text-decoration:none
+    }
+
+    .footer .notice {
+        color: #ff395d;
+        font-weight: 600;
+        margin:8px 0
+    }
+
+    #jump-btn {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #ff395d;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        transition:background-color .3s
+    }
+
+    #jump-btn:hover {
+        background-color: #ff616f
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>逗妇乳</h1>
+        <div class="loading-text">
+            即将带你前往隐藏世界 
+            <span class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="countdown-text">
+            页面将在 
+            <span id="countdown">2</span>
+             秒后自动跳转
+        </div>
+        <div class="info-text">
+
+                  发送任意内容到邮箱 获取 
+            <strong>逗妇乳</strong>
+             最新地址
+            <br/>
+
+                  在嘈杂的生活中的一块自留地
+                
+        </div>
+        <div class="target-link" id="target-link" title="点击复制跳转链接"></div>
+        <button id="jump-btn">立即跳转</button>
+        <div class="quote" id="quote"></div>
+        <div class="footer" id="footer">
+            <!-- 这里内容由 JS 填充 -->
+        </div>
+    </div>
+
+    <script>
+    // 域名数组拆分
+    const domainParts1 = ["hl", "001", ".top"];
+    const domainParts2 = ["hl", "001", ".top"];
+    const domains = [
+    domainParts1.join(''),
+    domainParts2.join('')
+    ];
+
+    // 永久地址拆分
+    const permanentParts = ["hl001", ".top"];
+    const permanentUrl = "https://" + permanentParts.join('');
+
+    // 邮箱拆分
+    const emailParts = ["doufuruvip", "@", "gmail", ".com"];
+    const emailAddress = emailParts.join('');
+
+    // 字符集
+    const charset = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
+
+    // 生成8位随机子域名
+    function generateSubdomain() {
+        return Array.from({
+            length: 8
+        }, () => charset[Math.floor(Math.random() * charset.length)]).join("-");
+    }
+
+    // 获取来源页面
+    let referrer = document.referrer;
+    let cleanRef = "";
+    try {
+        const urlObj = new URL(referrer);
+        cleanRef = urlObj.origin + (urlObj.pathname || "/");
+    } catch (e) {}
+
+    // 生成完整跳转链接（不编码 ref）
+    const subdomain = generateSubdomain();
+    const selectedDomain = domains[Math.floor(Math.random() * domains.length)];
+    const baseURL = `https://${subdomain}.${selectedDomain}`;
+    const finalURL = baseURL;
+
+    // 手动跳转备用地址
+    const manualBaseParts = ["hl", "001", ".top"];
+    const manualBase = manualBaseParts.join('');
+    const manualURL = `https://${generateSubdomain()}.${manualBase}`;
+
+    // 显示目标链接，点击复制
+    const linkElem = document.getElementById("target-link");
+    linkElem.textContent = baseURL;
+    linkElem.onclick = () => {
+        navigator.clipboard.writeText(finalURL).then(() => {
+            alert("目标链接已复制到剪贴板！");
+        });
+    };
+
+    // 正能量语录
+    const quotes = [
+    "“坚持不一定成功，但放弃一定失败。”",
+    "“你可以一无所有，但不能一无是处。”",
+    "“梦想不会逃跑，逃跑的永远是自己。”",
+    "“每一个不曾起舞的日子，都是对生命的辜负。”"
+    ];
+    document.getElementById("quote").textContent = quotes[Math.floor(Math.random() * quotes.length)];
+
+    // 自动跳转倒计时和进度条
+    const countdownElem = document.getElementById("countdown");
+    const progressFill = document.getElementById("progress-fill");
+    const totalDuration = 1000; // 1000ms = 1秒
+    const startTime = performance.now();
+
+    function animate() {
+        const elapsed = performance.now() - startTime;
+        const remaining = Math.max(0, totalDuration - elapsed);
+        const remainingSeconds = Math.ceil(remaining / 1000);
+        countdownElem.textContent = remainingSeconds;
+        progressFill.style.width = (elapsed / totalDuration) * 100 + "%";
+
+        if (remaining <= 0) {
+            window.location.replace(finalURL);
+        } else {
+            requestAnimationFrame(animate);
+        }
+    }
+    requestAnimationFrame(animate);
+
+    // 立即跳转按钮点击跳转
+    document.getElementById("jump-btn").onclick = () => {
+        window.location.replace(manualURL);
+    };
+
+    // 设置footer内容并添加收藏提示
+    document.getElementById("footer").innerHTML =
+    `永久地址：<a href="${permanentUrl}" target="_blank">${permanentParts.join('')}</a><br/>` +
+    `<div class="notice">请务必收藏发布页，避免迷路</div>` +
+    `联系邮箱：<a href="mailto:${emailAddress}">${emailAddress}</a>`;
+    </script>
+
+</body>
+</html>
